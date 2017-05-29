@@ -36,7 +36,7 @@ function showArray() {
     console.log(list);
 }
 
-                                        //DRAG AND DROP FUNCTIONS
+                                            //DRAG AND DROP FUNCTIONS
 //********************************************************************************************************
 function allowDrop(ev) {
     ev.preventDefault();
