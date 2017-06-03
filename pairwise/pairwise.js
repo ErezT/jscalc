@@ -1,28 +1,28 @@
 
 function pairwise(arr, arg) {
-  var tempArr = [];
-  var ifArray = [];
-  
-  var x = arr.reduce(function(acc, val, ind) {
-    for(var i = 0; i < arr.length; i++) {
-      var theSum = val + arr[i];
-      if((theSum === arg) && val !== arr[i]) {
-        console.log('val => ' + val + " | arr[i] => " + arr[i]);
-        acc += ind;
-        tempArr.push(acc);
-      } else if((theSum === arg) && (val === arr[i])) {
-        ifArray.push(theSum);
-      }
+ 
+ var resultArray = [];
+ for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr.length; j++) {
+      if ((i !== j) && (arr[i] + arr[j] === arg) && resultArray.indexOf(i) === -1 && resultArray.indexOf(j) === -1) {
+        resultArray.push(i, j);
+        break;
+      } 
     }
-    // console.log("index: " + ind);
-    return acc;
-  }, 0);
-  console.log(ifArray);
-  console.log(x);
+ }
+
+ console.log(resultArray);
+ var x = resultArray.reduce(function (acc, val) {
+    return acc + val;
+ }, 0);
+
+ console.log(x);
 }
 
+pairwise([0, 0, 0, 0, 1, 1], 1);
 // pairwise([1, 1, 1], 2);
-pairwise([1,4,2,3,0,5], 7);
+// pairwise([1,4,2,3,0,5], 7);
+// pairwise([1, 3, 2, 4], 4);
 
 /*
 Given an array arr, find element pairs whose sum equal the second argument arg and return the sum of their indices.

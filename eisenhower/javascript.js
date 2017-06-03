@@ -1,5 +1,12 @@
 
 var tasksArray = [];
+var resultArray = [];
+var lastArray = [];
+// var imp_urg = [];
+// var imp_less_urg = [];
+// var less_imp_urg = [];
+// var less_imp_less_urg = [];
+
 var taskEntered = "";
 var array = document.getElementById('arr');
 var list = document.getElementById('list');
@@ -24,7 +31,7 @@ function removeLastItem() {
 function showArray() {
     list.innerHTML = "";
     for(var i = 0; i < tasksArray.length; i++) {
-        var idNum = tasksArray[i];
+        var idNum = i;
         var x = createItem(tasksArray[i]);
         x.setAttribute("draggable", true);
         x.setAttribute('ondragstart', 'drag(event)');
@@ -36,20 +43,33 @@ function showArray() {
     console.log(list);
 }
 
+function test(arr, ite) {
+    arr.push(ite);
+}
+
                                             //DRAG AND DROP FUNCTIONS
 //********************************************************************************************************
 function allowDrop(ev) {
+    // event.target.style.color = 'blue';
     ev.preventDefault();
 }
 
 function drag(ev) {
-    ev.dataTransfer.setData("LI", ev.target.id);
+    ev.dataTransfer.setData('val', ev.target.value);
+    ev.dataTransfer.setData("id", ev.target.id);
+    // ev.dataTransfer.setData("text/plain", ev.target.);
 }
 
 function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("LI");
-    ev.target.appendChild(document.getElementById(data));
+    var id = ev.dataTransfer.getData("id");
+    var indexOfMovingItem = ev.dataTransfer.getData("val");
+    console.log("id " + id);
+    console.log("val " + indexOfMovingItem);
+    resultArray.push(id);
+    test(lastArray, id);
+    ev.target.appendChild(document.getElementById(id));
+    ev.dataTransfer.clearData();
 }
 //********************************************************************************************************
 
