@@ -1,0 +1,38 @@
+body {
+    background-color: black;
+}
+
+.calc-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.keys-container {
+  color: red;
+  width: 400px;
+  height: 400px;
+  background-color: #ececec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.keys {
+  color: black;
+  width: 80px;
+  height: 80px;
+  background-color: #625a5a;
+  border: solid;
+  margin: 2px;
+  text-align: center;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.screen {
+  background-color: #ccc;
+  height: 40px;
+  font-size: 40px;
+}

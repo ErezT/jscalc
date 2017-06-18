@@ -2,10 +2,33 @@
 <html>
     <head>
         <title>Calc</title>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
     </head>
 
     <body>
-        
+        <div class="calc-container">
+  <div class="screen" id="output"></div>
+  <div class="keys-container">
+    <div class="keys" id="div1" data-number="1" onclick="getNumber(this.id)"> 1</div>
+    <div class="keys" id="div2" data-number="2" onclick="getNumber(this.id)"> 2</div>
+    <div class="keys" id="div3" data-number="3" onclick="getNumber(this.id)"> 3</div>
+    <div class="keys" id="div4" data-number="4" onclick="getNumber(this.id)"> 4</div>
+    <div class="keys" id="div5" data-number="5" onclick="getNumber(this.id)"> 5</div>
+    <div class="keys" id="div6" data-number="6" onclick="getNumber(this.id)"> 6</div>
+    <div class="keys" id="div7" data-number="7" onclick="getNumber(this.id)"> 7</div>
+    <div class="keys" id="div8" data-number="8" onclick="getNumber(this.id)"> 8</div>
+    <div class="keys" id="div9" data-number="9" onclick="getNumber(this.id)"> 9</div>
+    <div class="keys" id="div0" data-number="0" onclick="getNumber(this.id)"> 0</div>
+    <div class="keys" id="add" data-symbol="+" onclick="assignSymbol(this.id)">+</div>
+    <div class="keys" id="sub" data-symbol="-" onclick="assignSymbol(this.id)">-</div>
+    <div class="keys" id="divide" data-symbol="/" onclick="assignSymbol(this.id)">/</div>
+    <div class="keys" id="mul" data-symbol="*" onclick="assignSymbol(this.id)">*</div>
+    <div class="keys" id="clear-button" data-number="clr" onclick="clearScreen()">C</div>
+    <div class="keys" id="result-button" data-number="res" onclick="getResult()">=</div>
+  </div>
+</div>
+
+<script src="javascript.js"></script>
     </body>
 
 
