@@ -5,6 +5,7 @@ var screen = document.getElementById("output");
 var digitsOnScreen = "";
 var symbol = "";
 var haveSum = false;
+var reg = /\+/;
 
 function add(x, y) {
   return Number(x) + Number(y);
